@@ -41,9 +41,14 @@
 			var step = parseInt(self.attr('step')) || 1;
 
 			function setText(n) {
-				if (isNaN(n) || (min && n < min) || (max && n > max)) {
+				if (isNaN(n) /*|| (min && n < min) || (max && n > max)*/) {
 					return false;
 				}
+				
+				if(min && n < min)
+					n = min;
+				else if(max && n > max) 
+					n = max;
 
 				clone.focus().val(n);
 				clone.trigger('change');
@@ -67,7 +72,7 @@
 			// remove spins from original
 			clone.prop('type', 'text').keydown(function(e) {
 				if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-					(e.keyCode == 65 && e.ctrlKey === true) ||
+					(e.keyCode === 65 && e.ctrlKey === true) ||
 					(e.keyCode >= 35 && e.keyCode <= 39)) {
 					return;
 				}
