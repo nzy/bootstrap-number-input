@@ -1,6 +1,6 @@
 ![Screenshot](screenshot.png "bootstrap-spin.js")
 
-Very simple, fast and lightweight (> 3K) jquery plugin for bootstrap to render number input more user-friendly.
+Very simple, fast and lightweight (> 3K) jQuery plugin for Bootstrap's input-group to render number input more user-friendly.
 
 ## Usage
 
@@ -12,4 +12,6 @@ $(SELECTOR).bootstrapNumber({
 });
 ```
 
-Checkout here for [demo](http://wpic.bitbucket.org/bootstrap-number-input/sample.html)
+## Copyright and license
+
+Code released under the [APACHE LICENSE, VERSION 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).

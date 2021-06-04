@@ -1,32 +1,15 @@
-
-/* ========================================================================
- * bootstrap-spin - v1.0
- * https://github.com/wpic/bootstrap-spin
- * ========================================================================
- * Copyright 2014 WPIC, Hamed Abdollahpour
- *
- * ========================================================================
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ========================================================================
+/*!
+ * bootstrap-number-input v5.0 (https://github.com/nzy/bootstrap-number-input)
+ * Copyright 2021 Constantine Zykov, <iweb@inbox.ru>
+ * Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.html)
  */
-
 (function ( $ ) {
 
 	$.fn.bootstrapNumber = function( options ) {
 
 		var settings = $.extend({
-			upClass: 'default',
-			downClass: 'default',
+			upClass: 'outline-secondary',
+			downClass: 'outline-secondary',
 			upText: '+',
 			downText: '-',
 			center: true
@@ -41,13 +24,13 @@
 			var step = parseInt(self.attr('step')) || 1;
 
 			function setText(n) {
-				if (isNaN(n) /*|| (min && n < min) || (max && n > max)*/) {
+				if (isNaN(n)) {
 					return false;
 				}
-				
+
 				if(min && n < min)
 					n = min;
-				else if(max && n > max) 
+				else if(max && n > max)
 					n = max;
 
 				clone.focus().val(n);
@@ -62,12 +45,12 @@
 			var up = $("<button type='button'>" + settings.upText + "</button>").attr('class', 'btn btn-' + settings.upClass).click(function() {
 				setText(parseInt(clone.val() || clone.attr('value')) + step);
 			});
-			$("<span class='input-group-btn'></span>").append(down).appendTo(group);
+			down.appendTo(group);
 			clone.appendTo(group);
 			if(clone && settings.center) {
 				clone.css('text-align', 'center');
 			}
-			$("<span class='input-group-btn'></span>").append(up).appendTo(group);
+			up.appendTo(group);
 
 			// remove spins from original
 			clone.prop('type', 'text').keydown(function(e) {
