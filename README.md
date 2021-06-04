@@ -14,4 +14,4 @@ $(SELECTOR).bootstrapNumber({
 
 ## Copyright and license
 
-Code released under the [APACHE 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
+Code released under the [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
