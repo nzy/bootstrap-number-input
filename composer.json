@@ -1,13 +1,16 @@
 {
     "name": "nzy/bootstrap-number-input",
     "description": "Very simple, fast and lightweight (> 3K) jQuery plugin for Bootstrap's input-group to render number input more user-friendly.",
-    "type": "library",
+    "keywords": [
+        "jquery",
+        "bootstrap",
+        "number"
+    ],
     "license": "Apache 2.0",
     "authors": [
         {
             "name": "Constantine Zykov,",
             "email": "iweb@inbox.ru"
         }
-    ],
-    "require": {}
+    ]
 }
